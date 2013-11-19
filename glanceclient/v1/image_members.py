@@ -100,4 +100,4 @@ class ImageMemberManager(base.Manager):
                     obj['can_share'] = member['can_share']
             memberships.append(obj)
         url = '/v1/images/%s/members' % base.getid(image)
-        self.api.json_request('PUT', url, {}, {'memberships': memberships})
+        self.api.json_request('PUT', url, body={'memberships': memberships})
